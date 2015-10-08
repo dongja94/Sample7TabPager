@@ -1,10 +1,7 @@
 package com.example.sample7tabpager;
 
-import java.util.ArrayList;
-
 import android.content.Context;
 import android.os.Bundle;
-import android.os.Message;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
@@ -16,6 +13,8 @@ import android.view.ViewGroup;
 import android.widget.TabHost;
 import android.widget.TabHost.OnTabChangeListener;
 import android.widget.TabWidget;
+
+import java.util.ArrayList;
 
 public class TabsAdapter extends FragmentPagerAdapter implements
 		TabHost.OnTabChangeListener, ViewPager.OnPageChangeListener {
@@ -69,7 +68,7 @@ public class TabsAdapter extends FragmentPagerAdapter implements
 		mViewPager = pager;
 		mTabHost.setOnTabChangedListener(this);
 		mViewPager.setAdapter(this);
-		mViewPager.setOnPageChangeListener(this);
+		mViewPager.addOnPageChangeListener(this);
 	}
 
 	public void onRestoreInstanceState(Bundle savedInstanceState) {
